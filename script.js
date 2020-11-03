@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         var cards = document.querySelectorAll('img')
         const optionOneId = cardsChosenId[0]
         const optionTwoId = cardsChosenId[1]
+        const timeElement = document.getElementById('timer')
 
         if (optionOneId == optionTwoId) {
             cards[optionOneId].setAttribute('src', 'images/blank.png')
@@ -99,11 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         cardsChosen = []
         cardsChosenId = []
-        // resultDisplay.textContent = cardsWon.length
         if (cardsWon.length === cardArray.length / 2) {
             resultDisplay.textContent = 'Félicitation tu as trouvé toute les paires!'
             resetButton.style.display = 'block'
             timer = clearInterval(timer)
+            timeElement.style.color = "rgb(153, 0, 0)"
+            timeElement.style.fontWeight = '800';
         }
     }
 
